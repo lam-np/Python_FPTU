@@ -5,19 +5,16 @@ def inputList()->list:                                  #Hàm trả về kết q
         number=int(input("Input your number = "))
         result.append(number)                           #Phương thức 'append': thêm vào phần tử cuối trong danh sách
     return result
-def isPrime(number):
-    if number<=1:
-        return False
-    for i in range (2,int(number**0.5)+1):
-        if number%i==0:
-            return False
-    return True
-def sumOfPrime(a:list)->int:     
-    primeNum=0
-    for number in a:
-        if isPrime(number):
-            primeNum+=1
-    return primeNum
-a=inputList()
-print(a)
-print(sumOfPrime(a))
+
+def findMaxEven():
+    danhsach=inputList()
+    maxEven=0
+    for number in danhsach:
+        if number%2==0 and number>maxEven:
+            maxEven=number
+    return maxEven
+max_even=findMaxEven()
+if max_even==0:
+    print("There are no even numbers in the list!")
+else:
+    print("The largest even number in the list is:",max_even)
